@@ -99,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const progressEl = document.getElementById("progress");
   const restartBtn = document.getElementById("restart-btn");
   const quizContainer = document.getElementById("quiz-container");
-  const themeSelect = document.getElementById("theme-select");
 
   let currentQuestion = 0;
   let score = 0;
