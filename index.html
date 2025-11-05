@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body
+    class="font-mono text-white flex items-center justify-center min-h-screen relative"
+  >
+    <!-- Background Canvas -->
+    <canvas id="matrix"></canvas>
+
+    <!-- === Boot Screen === -->
+    <div
+      id="boot-screen"
+      class="absolute inset-0 z-20 bg-black flex flex-col items-center justify-center text-green-400 text-sm font-mono"
+    >
+      <div id="boot-text" class="text-left whitespace-pre-line"></div>
+      <button
+        id="start-btn"
+        class="hidden mt-8 border border-green-400 px-6 py-2 rounded-lg hover:bg-green-500/20 accent-glow"
+      >
+        ▶ START TEST
+      </button>
+    </div>
+
+    <!-- === Quiz Container === -->
+    <div
+      id="quiz-card"
+      class="hidden relative z-10 w-full max-w-xl bg-black/40 backdrop-blur-2xl rounded-3xl border border-white/10 shadow-2xl p-8 fade-in"
+    >
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h1 class="text-3xl font-bold accent glitch tracking-widest">
+          HACK QUIZ
+        </h1>
+
+        <select
+          id="theme-select"
+          class="bg-black/50 border border-white/20 rounded-lg px-3 py-2 text-sm outline-none cursor-pointer hover:border-accent accent-glow"
+        >
+          <option value="default">Cyber Green</option>
+        </select>
+      </div>
+
+      <!-- Progress -->
+      <div class="w-full bg-white/10 h-2 rounded-full overflow-hidden mb-6">
+        <div
+          id="progress"
+          class="accent-bg h-2 w-0 transition-all duration-500 ease-out"
+        ></div>
+      </div>
+
+      <!-- Quiz -->
+      <div id="quiz-container" class="space-y-6">
+        <h2 id="question" class="text-lg font-semibold typewriter"></h2>
+        <div id="options" class="grid gap-3"></div>
+      </div>
+
+      <!-- Next -->
+      <div class="flex justify-end mt-6">
+        <button
+          id="next-btn"
+          class="accent-bg text-black px-6 py-2 rounded-lg font-bold hover:opacity-90 active:scale-95"
+        >
+          Next ➜
+        </button>
+      </div>
+
+      <!-- Result -->
+      <div id="result" class="hidden text-center mt-6 space-y-4">
+        <h2 id="result-title" class="text-3xl font-bold"></h2>
+        <p id="score" class="text-lg"></p>
+        <button
+          id="restart-btn"
+          class="accent-bg text-black px-6 py-2 rounded-lg font-bold hover:opacity-90"
+        >
+          Restart 🔁
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
